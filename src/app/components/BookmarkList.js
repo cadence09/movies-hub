@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { VStack, Heading, Text, Box, Flex, Button } from "@chakra-ui/react";
+import { VStack, Heading, Text, Box, Flex, Button, Image} from "@chakra-ui/react";
 
 export const BookmarkList = ({bookmarks}) => {
   const [bookmarkedMovies, setBookmarkedMovies] = useState([]);
@@ -23,7 +23,7 @@ export const BookmarkList = ({bookmarks}) => {
             <Box key={movie.imdbID} w="240px" m="4">
               <Text fontSize="xl">{movie.Title}</Text>
               <Text>{movie.Year}</Text>
-              <img src={movie.Poster} alt={movie.Title} />
+              <Image src={movie.Poster} alt={movie.Title}/>
               <Flex mt="2">
                 <Button size="sm" colorScheme="red" ml="2" onClick={() => removeBookmark(movie)} >
                   Remove bookmark
