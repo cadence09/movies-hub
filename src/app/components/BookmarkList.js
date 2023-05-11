@@ -33,7 +33,7 @@ export const BookmarkList = ({bookmarks}) => {
           ))}
         </Flex>
       ) : (
-        <Text>You haven't bookmarked any movies yet!</Text>
+        <Text>You have not bookmarked any movies yet!</Text>
       )}
     </VStack>
   );
