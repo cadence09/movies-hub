@@ -48,8 +48,12 @@ export default function Home() {
   const displayMovies = searchResults.slice(0, 10);
 
   const getBookmarks = () => {
+    if (typeof localStorage === 'undefined') {
+      return [];
+    }
+    
     const bookmarks = [];
- 
+   
     for (let i = 0; i < localStorage.length; i++) {
       if(localStorage.key(i).includes("tt")){
       const key = localStorage.key(i);
@@ -60,6 +64,7 @@ export default function Home() {
     const dataArray = bookmarks.map(JSON.parse);    
     return dataArray;
   };
+
 
   return (
     <VStack p="4">
